@@ -13,4 +13,6 @@ COPY package.json package.json
 RUN npm install && \
     npm cache clean --force
 
-CMD ["/sbin/tini" "--" "node" "./bin/www"]
+COPY . . 
+
+CMD ["/sbin/tini", "--", "node", "./bin/www"]
